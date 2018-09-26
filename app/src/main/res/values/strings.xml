@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">IDog</string>
+
+    <!-- Drawer Menu -->
+    <string name="drawer_menu_logout">Sair</string>
+</resources>
