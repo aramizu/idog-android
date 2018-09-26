@@ -4,28 +4,19 @@ import br.com.aramizu.idog.models.User
 import io.realm.Realm
 import io.realm.RealmObject
 import io.realm.annotations.PrimaryKey
+import io.realm.annotations.RealmClass
 import io.realm.annotations.Required
 
-open class UserSession : RealmObject() {
+@RealmClass
+open class UserSession() : RealmObject() {
+
+    constructor(user: User) : this() {
+        token = user.token
+        email = user.email
+    }
 
     @PrimaryKey
     @Required
     var token: String? = null
-
-    private fun RealmObject.store() {
-        Realm.getDefaultInstance().use { realm ->
-            realm.beginTransaction()
-            realm.insertOrUpdate(this)
-            realm.commitTransaction()
-        }
-    }
-
-    fun store(){
-        (this as RealmObject).store()
-    }
-
-    fun toRealmObject(user: User): UserSession {
-        this.token = user.token
-        return this
-    }
+    var email: String? = null
 }

@@ -2,6 +2,8 @@ package br.com.aramizu.idog.config
 
 import android.app.Application
 import android.content.Context
+import io.realm.Realm
+import io.realm.RealmConfiguration
 
 class IDogApplication : Application() {
 
@@ -19,5 +21,18 @@ class IDogApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
+        initRealm()
+    }
+
+    override fun onTerminate() {
+        Realm.getDefaultInstance().close()
+        super.onTerminate()
+    }
+
+    private fun initRealm() {
+        Realm.init(this)
+        val realmConfiguration = RealmConfiguration.Builder().build()
+
+        Realm.setDefaultConfiguration(realmConfiguration)
     }
 }
