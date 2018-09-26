@@ -10,10 +10,14 @@ import br.com.aramizu.idog.extensions.pushFragment
 import br.com.aramizu.idog.modules.main.adapters.DrawerMenuAdapter
 import br.com.aramizu.idog.modules.main.contracts.MainContract
 import br.com.aramizu.idog.modules.main.router.MainRouter
-import br.com.aramizu.idog.model.DrawerMenuItem
+import br.com.aramizu.idog.models.DrawerMenuItem
 import br.com.aramizu.idog.modules.categories.view.CategoriesFragment
+import br.com.aramizu.idog.utils.StringResources
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_toolbar.*
+import org.jetbrains.anko.alert
+import org.jetbrains.anko.noButton
+import org.jetbrains.anko.yesButton
 import java.util.ArrayList
 
 class MainActivity : AppCompatActivity(), MainContract.View {
@@ -29,6 +33,8 @@ class MainActivity : AppCompatActivity(), MainContract.View {
         setUpToolbar()
         setUpListeners()
         setupMainFragment()
+
+        presenter.onCreate()
     }
 
     private fun setUpListeners() {
@@ -60,9 +66,20 @@ class MainActivity : AppCompatActivity(), MainContract.View {
         }
     }
 
+    override fun showEmailOnGreeting(email: String) {
+        textViewGreetings.text = email
+    }
+
     override fun onDrawerMenuListClick(drawerMenuItem: DrawerMenuItem) {
         when (drawerMenuItem.type) {
-            DrawerMenuType.LOGOUT -> finish()
+            DrawerMenuType.LOGOUT -> {
+                val title = StringResources.get(R.string.warning_title)
+                val message = StringResources.get(R.string.logout_warning_message)
+                alert(title, message) {
+                    yesButton { presenter.onLogoutTapped() }
+                    noButton {}
+                }.show()
+            }
             else -> drawerLayout.closeDrawer(drawerContainer)
         }
     }

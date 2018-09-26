@@ -15,10 +15,12 @@ class LoginRemoteDataManager(
     override fun login(email: String): Single<User> {
         val loginRequest = LoginRequest(email)
         return service.login(loginRequest)
-                .map { User(
-                        it.token ?: String(),
-                        it.email ?: String()
-                ) }
+                .map {
+                    User(
+                        it.user?.token ?: String(),
+                        it.user?.email ?: String()
+                    )
+                }
     }
 
 }

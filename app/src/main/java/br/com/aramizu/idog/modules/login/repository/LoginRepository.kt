@@ -3,7 +3,6 @@ package br.com.aramizu.idog.modules.login.repository
 import br.com.aramizu.idog.manager.SessionManagerContracts
 import br.com.aramizu.idog.models.User
 import br.com.aramizu.idog.modules.login.contracts.LoginContract
-import io.reactivex.Completable
 import io.reactivex.Single
 
 class LoginRepository(
@@ -14,6 +13,7 @@ class LoginRepository(
     override fun login(email: String): Single<User> {
         return remote.login(email)
                 .doOnSuccess {
+                    sessionManager.clearUserSession()
                     sessionManager.saveUserSession(it)
                 }
     }

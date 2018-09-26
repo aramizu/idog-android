@@ -3,18 +3,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@android:color/white">
+    android:background="@drawable/bg_login_gradient">
 
-    <Button
-        android:id="@+id/buttonLoadHero"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerViewCategories"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Carregar Herói"/>
-
-    <Button
-        android:id="@+id/buttonNewHero"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Novo Herói"/>
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"/>
 
 </LinearLayout>

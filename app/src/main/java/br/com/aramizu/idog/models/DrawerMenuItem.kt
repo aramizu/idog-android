@@ -1,4 +1,4 @@
-package br.com.aramizu.idog.model
+package br.com.aramizu.idog.models
 
 import android.graphics.drawable.Drawable
 import br.com.aramizu.idog.enums.DrawerMenuType

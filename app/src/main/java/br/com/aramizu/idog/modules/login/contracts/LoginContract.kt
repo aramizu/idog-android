@@ -29,4 +29,8 @@ interface LoginContract {
     interface Remote {
         fun login(email: String): Single<User>
     }
+
+    interface Router {
+        fun goToMainScreen()
+    }
 }

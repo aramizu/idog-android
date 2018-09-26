@@ -16,6 +16,7 @@ import io.reactivex.schedulers.Schedulers
 class LoginPresenter(
         private val view: LoginContract.View,
         private val interactor: LoginContract.Interactor,
+        private val router: LoginContract.Router,
         private val disposeBag: DisposeBag
 ) : LoginContract.Presenter {
 
@@ -27,6 +28,7 @@ class LoginPresenter(
                 .subscribeBy(
                         onSuccess = {
                             view.hideLoading()
+                            router.goToMainScreen()
                         },
                         onError = { error ->
                             view.hideLoading()

@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import br.com.aramizu.idog.R
 import br.com.aramizu.idog.modules.main.contracts.MainContract
-import br.com.aramizu.idog.model.DrawerMenuItem
+import br.com.aramizu.idog.models.DrawerMenuItem
 
 import java.util.ArrayList
 
@@ -21,7 +21,7 @@ class DrawerMenuAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DrawerMenuItemViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_drawer_menu_item, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_drawer_menu, parent, false)
         return DrawerMenuItemViewHolder(view)
     }
 

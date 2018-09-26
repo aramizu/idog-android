@@ -23,17 +23,17 @@ class RealmHelper(
 
     fun <T : RealmObject> save(items: List<T>) {
         val connection = this.connection
-        writeOnRealm(connection, {
+        writeOnRealm(connection) {
             connection.insert(items)
-        })
+        }
         connection.close()
     }
 
     fun <T : RealmObject> update(updateObject: () -> Unit) {
         val connection = this.connection
-        writeOnRealm(connection, {
+        writeOnRealm(connection) {
             updateObject()
-        })
+        }
         connection.close()
     }
 
@@ -63,11 +63,11 @@ class RealmHelper(
 
     fun <T : RealmObject> delete(items: List<T>) {
         val connection = this.connection
-        writeOnRealm(connection, {
+        writeOnRealm(connection) {
             items.forEach {
                 it.deleteFromRealm()
             }
-        })
+        }
         connection.close()
     }
 

@@ -7,7 +7,6 @@ fun AppCompatActivity.pushFragment(fragment: Fragment, contentFrame: Int) {
     val fragmentManager = this.supportFragmentManager
     val transaction = fragmentManager.beginTransaction()
     transaction.replace(contentFrame, fragment)
-    transaction.addToBackStack(null)
     transaction.commit()
 }
 

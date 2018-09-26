@@ -8,4 +8,8 @@
     <string name="no_network_error">Você não está conectado na internet. Tente novamente mais tarde</string>
     <string name="empty_field_error">O e-mail é obrigatório</string>
     <string name="invalid_field_error">O e-mail está inválido</string>
+
+    <!-- Warning Messages -->
+    <string name="warning_title">Aviso</string>
+    <string name="logout_warning_message">Tem certeza que deseja sair?</string>
 </resources>
