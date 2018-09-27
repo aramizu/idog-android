@@ -21,11 +21,11 @@ It was developed with Android Studio 3.2 with `minSdkVersion 21` using native Ko
 ## Screenshots
 
 ![Login Screen](https://github.com/aramizu/idog-android/blob/master/screen_1.png?raw=true)
-![Loading Screen](https://github.com/aramizu/idog-android/blob/master/screen_2.jpg?raw=true)
-![Main Screen](https://github.com/aramizu/idog-android/blob/master/screen_3.jpg?raw=true)
-![Drawer Screen](https://github.com/aramizu/idog-android/blob/master/screen_4.jpg?raw=true)
-![List Screen](https://github.com/aramizu/idog-android/blob/master/screen_5.jpg?raw=true)
-![Details Screen](https://github.com/aramizu/idog-android/blob/master/screen_6.jpg?raw=true)
+![Loading Screen](https://github.com/aramizu/idog-android/blob/master/screen_2.png?raw=true)
+![Main Screen](https://github.com/aramizu/idog-android/blob/master/screen_3.png?raw=true)
+![Drawer Screen](https://github.com/aramizu/idog-android/blob/master/screen_4.png?raw=true)
+![List Screen](https://github.com/aramizu/idog-android/blob/master/screen_5.png?raw=true)
+![Details Screen](https://github.com/aramizu/idog-android/blob/master/screen_6.png?raw=true)
 
 ## Getting Started
 
