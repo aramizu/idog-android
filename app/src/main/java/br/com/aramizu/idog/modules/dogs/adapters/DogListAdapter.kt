@@ -63,7 +63,11 @@ class DogListAdapter(
         }
 
         private fun setListeners() {
-            view.imageViewDogThumb.setOnClickListener { parentView.onDogTapped(view.imageViewDogThumb.drawable) }
+            view.imageViewDogThumb.setOnClickListener {
+                if (view.loading.visibility == View.GONE) {
+                    parentView.onDogTapped(view.imageViewDogThumb.drawable)
+                }
+            }
         }
     }
 }
