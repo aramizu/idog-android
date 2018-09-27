@@ -1,10 +1,9 @@
-package br.com.aramizu.idog.network
+package br.com.aramizu.idog.network.service
 
 import br.com.aramizu.idog.extensions.loginApi
+import br.com.aramizu.idog.network.RetrofitClient
 import br.com.aramizu.idog.network.request.LoginRequest
 import br.com.aramizu.idog.network.response.UserResponse
-import br.com.aramizu.idog.network.response.UserSessionResponse
-import br.com.aramizu.idog.network.service.UserServiceContract
 import io.reactivex.Single
 
 class UserService : UserServiceContract {

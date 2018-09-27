@@ -12,4 +12,10 @@
     <!-- Warning Messages -->
     <string name="warning_title">Aviso</string>
     <string name="logout_warning_message">Tem certeza que deseja sair?</string>
+
+    <!-- Categories -->
+    <string name="hound_category">Hound</string>
+    <string name="pug_category">Pug</string>
+    <string name="labrador_category">Labrador</string>
+    <string name="husky_category">Husky</string>
 </resources>

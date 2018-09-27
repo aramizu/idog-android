@@ -10,6 +10,7 @@ import android.widget.TextView
 import br.com.aramizu.idog.R
 import br.com.aramizu.idog.models.CategoryItem
 import br.com.aramizu.idog.modules.categories.contracts.CategoriesContract
+import kotlinx.android.synthetic.main.item_category.view.*
 
 import java.util.ArrayList
 
@@ -32,11 +33,8 @@ class CategoryListAdapter(
         holder.populate(drawerMenuItem)
     }
 
-    inner class CategoryViewHolder internal constructor(view: View) : RecyclerView.ViewHolder(view) {
+    inner class CategoryViewHolder internal constructor(val view: View) : RecyclerView.ViewHolder(view) {
         private lateinit var categoryItem: CategoryItem
-        private val textViewCategoryName: TextView by lazy { view.findViewById<TextView>(R.id.textViewCategoryName) }
-        private val imageViewCategoryIcon: ImageView by lazy { view.findViewById<ImageView>(R.id.imageViewCategoryIcon) }
-        private val cardContainer: CardView by lazy { view.findViewById<CardView>(R.id.cardContainer) }
 
         init {
             setListeners()
@@ -44,12 +42,12 @@ class CategoryListAdapter(
 
         fun populate(categoryItem: CategoryItem) {
             this.categoryItem = categoryItem
-            imageViewCategoryIcon.setImageDrawable(categoryItem.icon)
-            textViewCategoryName.text = categoryItem.category
+            view.imageViewCategoryIcon.setImageDrawable(categoryItem.icon)
+            view.textViewCategoryName.text = categoryItem.category
         }
 
         private fun setListeners() {
-            cardContainer.setOnClickListener { parentView.onCategoryTapped(categoryItem.category) }
+            view.cardContainer.setOnClickListener { parentView.onCategoryTapped(categoryItem.category) }
         }
     }
 }

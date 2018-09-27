@@ -62,7 +62,7 @@ class MainActivity : AppCompatActivity(), MainContract.View {
         val drawerMenuAdapter = DrawerMenuAdapter(this, items)
         recyclerViewDrawerMenu.apply {
             adapter = drawerMenuAdapter
-            layoutManager = LinearLayoutManager(MainActivity@context)
+            layoutManager = LinearLayoutManager(context)
         }
     }
 

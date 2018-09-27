@@ -18,6 +18,7 @@ interface CategoriesContract {
 
     interface Presenter {
         fun onCreate()
+        fun onCategoryTapped(category: String)
     }
 
     interface Router {

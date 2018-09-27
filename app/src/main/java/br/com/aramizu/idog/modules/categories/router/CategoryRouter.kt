@@ -5,6 +5,8 @@ import br.com.aramizu.idog.manager.SessionManager
 import br.com.aramizu.idog.modules.categories.contracts.CategoriesContract
 import br.com.aramizu.idog.modules.categories.presenter.CategoriesPresenter
 import br.com.aramizu.idog.modules.categories.view.CategoriesFragment
+import br.com.aramizu.idog.modules.dogs.router.DogsRouter
+import br.com.aramizu.idog.modules.dogs.view.DogsActivity
 import br.com.aramizu.idog.modules.login.view.LoginActivity
 import br.com.aramizu.idog.modules.main.contracts.MainContract
 import br.com.aramizu.idog.modules.main.datamanager.MainLocalDataManager
@@ -26,6 +28,9 @@ class CategoryRouter(
     }
 
     override fun goToDogListByCategory(category: String) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        val bundle = DogsRouter.assembleModuleData(category)
+        val intent = Intent(view.context, DogsActivity::class.java)
+        intent.putExtra(DogsRouter.CATEGORY_EXTRA, bundle)
+        view.startActivity(intent)
     }
 }

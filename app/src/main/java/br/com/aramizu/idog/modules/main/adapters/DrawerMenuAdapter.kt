@@ -8,6 +8,7 @@ import android.widget.TextView
 import br.com.aramizu.idog.R
 import br.com.aramizu.idog.modules.main.contracts.MainContract
 import br.com.aramizu.idog.models.DrawerMenuItem
+import kotlinx.android.synthetic.main.item_drawer_menu.view.*
 
 import java.util.ArrayList
 
@@ -30,9 +31,8 @@ class DrawerMenuAdapter(
         holder.populate(drawerMenuItem)
     }
 
-    inner class DrawerMenuItemViewHolder internal constructor(view: View) : RecyclerView.ViewHolder(view) {
+    inner class DrawerMenuItemViewHolder internal constructor(val view: View) : RecyclerView.ViewHolder(view) {
         private lateinit var drawerMenuItem: DrawerMenuItem
-        private val textViewItemDescription: TextView by lazy { view.findViewById<TextView>(R.id.textViewItemDescription) }
 
         init {
             setListeners()
@@ -40,14 +40,14 @@ class DrawerMenuAdapter(
 
         fun populate(drawerMenuItem: DrawerMenuItem) {
             this.drawerMenuItem = drawerMenuItem
-            textViewItemDescription.text = drawerMenuItem.itemDescription
+            view.textViewItemDescription.text = drawerMenuItem.itemDescription
             drawerMenuItem.icon?.let {
-                textViewItemDescription.setCompoundDrawablesWithIntrinsicBounds(drawerMenuItem.icon, null, null, null)
+                view.textViewItemDescription.setCompoundDrawablesWithIntrinsicBounds(drawerMenuItem.icon, null, null, null)
             }
         }
 
         private fun setListeners() {
-            textViewItemDescription.setOnClickListener { parentView.onDrawerMenuListClick(drawerMenuItem) }
+            view.textViewItemDescription.setOnClickListener { parentView.onDrawerMenuListClick(drawerMenuItem) }
         }
     }
 }

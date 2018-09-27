@@ -20,8 +20,26 @@ class CategoriesPresenter(
             val items = ArrayList<CategoryItem>()
             items.add(
                     CategoryItem(
-                            StringResources.get(R.string.drawer_menu_logout),
-                            DrawableResources.get(R.drawable.ic_pawprint)
+                            StringResources.get(R.string.husky_category),
+                            DrawableResources.get(R.drawable.ic_husky)
+                    )
+            )
+            items.add(
+                    CategoryItem(
+                            StringResources.get(R.string.pug_category),
+                            DrawableResources.get(R.drawable.ic_pug)
+                    )
+            )
+            items.add(
+                    CategoryItem(
+                            StringResources.get(R.string.hound_category),
+                            DrawableResources.get(R.drawable.ic_hound)
+                    )
+            )
+            items.add(
+                    CategoryItem(
+                            StringResources.get(R.string.labrador_category),
+                            DrawableResources.get(R.drawable.ic_labrador)
                     )
             )
             return items
@@ -29,6 +47,10 @@ class CategoriesPresenter(
 
     override fun onCreate() {
         view.showCategories(categoryList)
+    }
+
+    override fun onCategoryTapped(category: String) {
+        router.goToDogListByCategory(category)
     }
 
 }

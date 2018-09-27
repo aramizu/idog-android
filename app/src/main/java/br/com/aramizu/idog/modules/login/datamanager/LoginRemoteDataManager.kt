@@ -2,9 +2,8 @@ package br.com.aramizu.idog.modules.login.datamanager
 
 import br.com.aramizu.idog.models.User
 import br.com.aramizu.idog.modules.login.contracts.LoginContract
-import br.com.aramizu.idog.network.UserService
+import br.com.aramizu.idog.network.service.UserService
 import br.com.aramizu.idog.network.request.LoginRequest
-import br.com.aramizu.idog.network.response.UserSessionResponse
 import br.com.aramizu.idog.network.service.UserServiceContract
 import io.reactivex.Single
 
